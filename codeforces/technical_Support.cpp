@@ -5,17 +5,24 @@ using namespace std;
 
 int main(){
   int countQuestion = 0, countAnswer = 0;
-  string messages;
+  string message;
   int quant_msg, tam_msg;
   cin >> quant_msg;
   for(int i = 0 ; i < quant_msg ; i++){
-    getline(cin, messages);
     cin >> tam_msg;
+    cin >> message; 
+    if(message[0] == 'A'){
+      cout << "No" << endl;
+    }
+    else if(message[message.size()-1] == 'Q'){
+      cout << "No" << endl;
+    }
+    else{
     for(int j = 0 ; j < tam_msg ; j++){
-      if(messages[j] == 'Q'){
+      if(message[j] == 'Q'){
         countQuestion++;
       }
-      if(messages[j] == 'A'){
+      if(message[j] == 'A'){
         countAnswer++;
       }
     }
@@ -26,6 +33,10 @@ int main(){
       cout << "No";
     }
     cout << endl;
+    countQuestion = 0;
+    countAnswer = 0;
+    message.erase();
+    }
   }
   return 0;
 }
