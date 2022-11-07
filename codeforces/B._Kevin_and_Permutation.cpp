@@ -29,9 +29,7 @@ int main(){
           for(int k = 1; k <= tamanho/2; k++){
                     
             aux_vet2.push_back(aux_vet[(tamanho/2+1)-k]);
-            cout << aux_vet[(tamanho/2+1)-k] << " SLICE 1" << endl;
             aux_vet2.push_back(aux_vet[tamanho-k]);
-            cout << aux_vet[tamanho-k] << " SLICE 2" << endl;
           }
 
         }
@@ -39,6 +37,9 @@ int main(){
       cout << aux_vet2[j] << " ";
     }
     cout << endl;
+    aux_vet.clear();
+    aux_vet2.clear();
+
   }
 }
 
