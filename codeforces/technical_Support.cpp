@@ -4,39 +4,35 @@ using namespace std;
 
 
 int main(){
-  int countQuestion = 0, countAnswer = 0;
+  int countQuestion = 0;
   string message;
   int quant_msg, tam_msg;
   cin >> quant_msg;
   for(int i = 0 ; i < quant_msg ; i++){
     cin >> tam_msg;
     cin >> message; 
-    if(message[0] == 'A'){
-      cout << "No" << endl;
-    }
-    else if(message[message.size()-1] == 'Q'){
-      cout << "No" << endl;
-    }
-    else{
     for(int j = 0 ; j < tam_msg ; j++){
       if(message[j] == 'Q'){
-        countQuestion++;
+        ++countQuestion;
       }
       if(message[j] == 'A'){
-        countAnswer++;
+        
+        --countQuestion;
+        
+      }
+      if(countQuestion < 0){
+        countQuestion = 0;
       }
     }
-    if(countAnswer >= countQuestion){
+    if(countQuestion == 0){
       cout << "Yes";
     }
     else{
       cout << "No";
     }
-    cout << endl;
-    countQuestion = 0;
-    countAnswer = 0;
+    cout << '\n';
+    countQuestion = 0; 
     message.erase();
-    }
   }
   return 0;
 }
