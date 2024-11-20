@@ -9,11 +9,16 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	var sumValue int
 	decimal := 1
 	for {
-		if li
 		sumValue = sumValue + (l1.Val+l2.Val)*decimal
-		li, l2 := ne
+
+		if l1.Next == nil || l2.Next == nil {
+			break
+		}
+		l1, l2 = l1.Next, l2.Next
+
 	}
-	return nil
+	var sumList *ListNode
+
 }
 
 func main() {
